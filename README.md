@@ -1,5 +1,7 @@
 # Refactoring-Golf for Emily Bache's Tennis-Refactoring-Kata
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/small-coding-dojo/yascr22-golf-tennis/)
+
 ## Status
 
 At the moment this repository is empty.
