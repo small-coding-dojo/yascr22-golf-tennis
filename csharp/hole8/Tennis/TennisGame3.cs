@@ -23,16 +23,23 @@ namespace Tennis
 
         public string GetScore()
         {
-            if ((_score1 < 4 && _score2 < 4) && (_score1 + _score2 < 6))
-            {
-                return (_score1 == _score2) ? ScoreAsString(_score1) + "-All" : ScoreAsString(_score1) + "-" + ScoreAsString(_score2);
-            }
-            else
-            {
-                if (_score1 == _score2)
-                    return "Deuce";
-                return ((_score1 - _score2) * (_score1 - _score2) == 1) ? "Advantage " + LeadPlayerName() : "Win for " + LeadPlayerName();
-            }
+            if (IsTie()) return ScoreAsString(_score1) + "-All";
+            if (IsDeuce()) return "Deuce";
+            if (_score1 < 4 && _score2 < 4 && _score1 + _score2 < 6 && _score1 != _score2)
+                return ScoreAsString(_score1) + "-" + ScoreAsString(_score2);
+            if ((_score1 - _score2) * (_score1 - _score2) == 1)
+                return "Advantage " + LeadPlayerName();
+            return "Win for " + LeadPlayerName();
+        }
+
+        private bool IsDeuce()
+        {
+            return _score1 == _score2 && _score1 + _score2 >= 6;
+        }
+
+        private bool IsTie()
+        {
+            return _score1 < 4 && _score2 < 4 && _score1 + _score2 < 6 && _score1 == _score2;
         }
 
         private string LeadPlayerName()
