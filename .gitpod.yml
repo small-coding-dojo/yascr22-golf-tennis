@@ -3,7 +3,7 @@ image:
 
 tasks:
   - init: cd csharp && dotnet restore && dotnet build --configuration Debug --no-restore
-    command: dotnet watch --project .hole1/Tennis.Tests test
+    command: dotnet watch --project ./hole1/Tennis.Tests test
   - openMode: split-right
     command: mob status
 
