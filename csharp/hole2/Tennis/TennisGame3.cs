@@ -41,9 +41,7 @@ namespace Tennis
 
         private string ScoreAsString(int score)
         {
-            string s;
-            s = _scoreStrings[score];
-            return s;
+            return _scoreStrings[score];
         }
     }
 }
