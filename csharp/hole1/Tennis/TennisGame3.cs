@@ -13,6 +13,14 @@ namespace Tennis
             _name2 = player2Name;
         }
 
+        public void WonPoint(string playerName)
+        {
+            if (playerName == "player1")
+                _score1 += 1;
+            else
+                _score2 += 1;
+        }
+
         public string GetScore()
         {
             string s;
@@ -30,15 +38,6 @@ namespace Tennis
                 return ((_score1 - _score2) * (_score1 - _score2) == 1) ? "Advantage " + s : "Win for " + s;
             }
         }
-
-        public void WonPoint(string playerName)
-        {
-            if (playerName == "player1")
-                _score1 += 1;
-            else
-                _score2 += 1;
-        }
-
     }
 }
 
