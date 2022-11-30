@@ -21,10 +21,7 @@ namespace Tennis
         {
             var score = "";
             if (p1point == p2point && p1point < 3)
-            {
-                score = ScoreAsString(score);
-                score += "-All";
-            }
+                score = ScoreAsString(p1point) + "-All";
             if (p1point == p2point && p1point > 2)
                 score = "Deuce";
 
@@ -100,7 +97,7 @@ namespace Tennis
         }
 
         private static string ScoreAsString(int score) =>
-        score switch
+            score switch
             {
                 0 => "Love",
                 1 => "Fifteen",
