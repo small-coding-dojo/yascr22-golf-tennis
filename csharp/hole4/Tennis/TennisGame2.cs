@@ -21,9 +21,18 @@ namespace Tennis
         {
             var score = "";
             if (p1point == p2point && p1point < 3)
-                score = ScoreAsString(p1point) + "-All";
+                return ScoreAsString(p1point) + "-All";
             if (p1point == p2point && p1point > 2)
-                score = "Deuce";
+                return "Deuce";
+
+            if (p1point - p2point == 1 && p2point >= 3)
+            {
+                return "Advantage player1";
+            }
+            if (p2point - p1point == 1 && p1point >= 3)
+            {
+                return "Advantage player2";
+            }
 
             if ((p1point > 0 && p2point == 0) || (p2point > 0 && p1point == 0))
             {
@@ -43,16 +52,6 @@ namespace Tennis
                 p2res = ScoreAsString(p2point);
                 p1res = ScoreAsString(p1point);
                 score = p1res + "-" + p2res;
-            }
-
-            if (p1point > p2point && p2point >= 3)
-            {
-                score = "Advantage player1";
-            }
-
-            if (p2point > p1point && p1point >= 3)
-            {
-                score = "Advantage player2";
             }
 
             if (p1point >= 4 && p2point >= 0 && (p1point - p2point) >= 2)
